@@ -1,7 +1,7 @@
 {
   "name": "Webapi",
   "version": "1.0.0",
-  "description": "imi adalah website rest api sederhana menggunakan swagger ui",
+  "description": "Ini adalah website rest api sederhana",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
