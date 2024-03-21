@@ -1,0 +1,17 @@
+{
+  "name": "Webapi",
+  "version": "1.0.0",
+  "description": "imi adalah website rest api sederhana menggunakan swagger ui",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Akuivan13",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.1.6",
+    "@tobyg74/tiktok-api-dl": "^1.0.14"
+  }
+}
+

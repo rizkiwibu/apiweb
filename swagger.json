@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "REST API GRATIS",
+    "description": "Made by Akuivan13.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Server Pengembangan Lokal"
+    }
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "tags": ["Message"],
+        "summary": "Menyapa Dunia",
+        "description": "Endpoint untuk menyapa dunia.",
+        "responses": {
+          "200": {
+            "description": "Berhasil mengembalikan pesan sapaan",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Halo, dunia!"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tiktok": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Unduh Video TikTok",
+        "description": "Endpoint untuk mengunduh video TikTok berdasarkan URL yang diberikan.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "description": "URL video TikTok yang akan diunduh.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Berhasil mengunduh video TikTok",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "author": "Nama Anda",
+                  "result": "Video TikTok berhasil diunduh."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Permintaan tidak valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 400,
+                  "message": "Masukkan URL TikTok!"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Kesalahan server",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 500,
+                  "message": "Terjadi kesalahan dalam mengunduh video TikTok."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/igstalk": {
+      "get": {
+        "tags": ["Instagram"],
+        "summary": "Informasi Pengguna Instagram",
+        "description": "Endpoint untuk mendapatkan informasi pengguna Instagram berdasarkan username yang diberikan.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "description": "Nama pengguna Instagram.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Berhasil mendapatkan informasi pengguna Instagram",
+            "content": {
+              "application/json": {
+                "example": {
+                  "username": "ivaannkan",
+                  "fullName": "Nama Lengkap Pengguna",
+                  "profilePicHD": "URL Foto Profil HD",
+                  "bio": "Bio Pengguna",
+                  "followers": "Jumlah Pengikut",
+                  "followersM": "Jumlah Pengikut (dalam format ribuan)",
+                  "following": "Jumlah Pengguna yang Diikuti",
+                  "followingM": "Jumlah Pengguna yang Diikuti (dalam format ribuan)",
+                  "postsCount": "Jumlah Kiriman",
+                  "postsCountM": "Jumlah Kiriman (dalam format ribuan)"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Permintaan tidak valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 400,
+                  "message": "Masukkan nama pengguna Instagram!"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Kesalahan server",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 500,
+                  "message": "Not found ;-;"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
