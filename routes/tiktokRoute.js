@@ -4,10 +4,6 @@ const { TiktokDownloader } = require("@tobyg74/tiktok-api-dl");
 const author = process.env.AUTHOR || "Akuivan13";
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
 router.get("/api/tiktok", (req, res) => {
   const url = req.query.url;
   if (!url) {
@@ -16,6 +12,7 @@ router.get("/api/tiktok", (req, res) => {
       message: "Masukkan URL Tiktok!"
     });
   }
+  
   TiktokDownloader(url, { version: "v2" })
     .then(data => {
       if (!data.result) {
@@ -37,4 +34,3 @@ router.get("/api/tiktok", (req, res) => {
 });
 
 module.exports = router;
-

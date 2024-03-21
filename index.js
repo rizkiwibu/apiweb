@@ -42,20 +42,7 @@ app.use("/", igstalkRoute);
 
 // Route untuk halaman utama
 app.get("/", (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>My New Website Title</title>
-    </head>
-    <body>
-      <h1>Welcome to My Website</h1>
-      <!-- Content of your website goes here -->
-    </body>
-    </html>
-  `);
+  res.sendFile(__dirname + "/index.html");
 });
 
 // Start server
