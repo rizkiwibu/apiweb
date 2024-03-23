@@ -5,9 +5,11 @@ const helloRoute = require("./routes/helloRoute");
 const tiktokRoute = require("./routes/tiktokRoute");
 const igstalkRoute = require("./routes/igStalk");
 const aiRoute = require("./routes/aiRoute");
+
 const PORT = process.env.PORT || 8000;
 const app = express();
 
+// Middleware untuk mem-parsing JSON bodies
 app.use(express.json());
 
 // CSS kustom untuk mengubah tampilan Swagger UI
@@ -42,10 +44,10 @@ app.use("/", aiRoute);
 
 // Route untuk halaman utama
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server sedang berjalan, mendengarkan port ${PORT}`);
+  console.log(`Server sedang berjalan, mendengarkan port ${PORT}`);
 });
