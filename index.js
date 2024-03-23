@@ -4,6 +4,7 @@ const swaggerDocument = require("./swagger.json");
 const helloRoute = require("./routes/helloRoute");
 const tiktokRoute = require("./routes/tiktokRoute");
 const igstalkRoute = require("./routes/igStalk");
+const aiRoute = require("./routes/aiRoute");
 
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -39,6 +40,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customC
 app.use("/", helloRoute);
 app.use("/", tiktokRoute);
 app.use("/", igstalkRoute);
+app.use("/", aiRoute);
 
 // Route untuk halaman utama
 app.get("/", (req, res) => {

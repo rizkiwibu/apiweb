@@ -5,9 +5,13 @@
     "description": "Made by Akuivan13.",
     "version": "1.0.0"
   },
-  "servers": [
+   "servers": [
     {
       "url": "https://api-web-production.up.railway.app/",
+      "description": "Server Produksi"
+    },
+    {
+      "url": "http://localhost:8000/",
       "description": "Server Pengembangan Lokal"
     }
   ],
@@ -139,6 +143,58 @@
                 "example": {
                   "status": 500,
                   "message": "Not found ;-;"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ai": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Chat dengan AI",
+        "description": "Endpoint untuk berkomunikasi dengan AI berdasarkan prompt yang diberikan.",
+        "parameters": [
+          {
+            "name": "prompt",
+            "in": "query",
+            "required": true,
+            "description": "Prompt untuk berkomunikasi dengan AI.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Berhasil berkomunikasi dengan AI",
+            "content": {
+              "application/json": {
+                "example": {
+                  "response": "Response dari AI berdasarkan prompt yang diberikan."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Permintaan tidak valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 400,
+                  "message": "Masukkan prompt!"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Kesalahan server",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 500,
+                  "message": "Terjadi kesalahan dalam memproses permintaan."
                 }
               }
             }
