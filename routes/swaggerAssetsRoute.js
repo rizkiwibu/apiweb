@@ -10,7 +10,7 @@ const customCss = `
         display: none;
     }
     .swagger-ui .topbar:before {
-        content: "Akuivan13 (Request Fitur Wa 089505520763)";
+        content: "Akuivan13 - Website";
         display: block;
         font-weight: bold;
         color: black;
@@ -25,6 +25,7 @@ const customCss = `
     }
 `;
 
+// Serve Swagger documentation beserta CSS kustom
 router.get(
   "/",
   swaggerUi.serve,
@@ -68,6 +69,16 @@ router.get("/swagger-ui-init.js", async (req, res) => {
   };`);
 });
 
+// Middleware untuk menyembunyikan /swagger.json
+router.use((req, res, next) => {
+  if (req.path === "/swagger.json") {
+    res.status(404).send("Not found");
+  } else {
+    next();
+  }
+});
+
+// Tambahkan rute untuk menampilkan swagger.json jika diperlukan
 router.get("/swagger.json", (req, res) => {
   res.json(swaggerDocument);
 });

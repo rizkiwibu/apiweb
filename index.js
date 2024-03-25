@@ -5,7 +5,13 @@ const helloRoute = require("./routes/helloRoute");
 const tiktokRoute = require("./routes/tiktokRoute");
 const igstalkRoute = require("./routes/igStalk");
 const aiRoute = require("./routes/aiRoute");
+const igdlRoute = require("./routes/igdl");
+const ghStalk = require("./routes/ghStalk");
+
+
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
+module.exports = require('./index.js');
+
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -31,7 +37,8 @@ app.use("/", helloRoute);
 app.use("/", tiktokRoute);
 app.use("/", igstalkRoute);
 app.use("/", aiRoute);
-
+app.use("/", igdlRoute);
+app.use ("/", ghStalk);
 // Route untuk halaman utama
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");

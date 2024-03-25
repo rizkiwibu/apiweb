@@ -2,35 +2,33 @@
   "openapi": "3.0.0",
   "info": {
     "title": "REST API GRATIS",
-    "description": "Made by Akuivan13.",
-    "version": "1.0.0"
-  },
-   "servers": [
-    {
-      "url": "https://apiaku.vercel.app/",
-      "description": "Server Produksi"
-    },
-    {
-      "url": "http://localhost:8000/",
-      "description": "Server Pengembangan Lokal"
+    "contact": {
+      "name": "Akuivan13",
+      "url": "https://riskimivan.my.id",
+      "whatsapp": "+6289505520763"
     }
-  ],
+  },
   "paths": {
     "/hello": {
       "get": {
-        "tags": ["Message"],
+        "tags": ["Test Here"],
         "summary": "Menyapa Dunia",
-        "description": "Endpoint untuk menyapa dunia.",
+        "description": "Endpoint untuk menyapa dunia",
         "responses": {
           "200": {
-            "description": "Berhasil mengembalikan pesan sapaan",
-            "content": {
-              "application/json": {
-                "example": {
-                  "message": "Halo, dunia!"
-                }
-              }
-            }
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ai": {
+      "get": {
+        "tags": ["Ai"],
+        "summary": "Interaksi dengan AI",
+        "description": "Endpoint untuk interaksi dengan AI",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -39,13 +37,37 @@
       "get": {
         "tags": ["Downloader"],
         "summary": "Unduh Video TikTok",
-        "description": "Endpoint untuk mengunduh video TikTok berdasarkan URL yang diberikan.",
+        "description": "Endpoint untuk mengunduh video TikTok",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/igdl": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Unduh Konten Instagram",
+        "description": "Endpoint untuk mengunduh konten Instagram",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ghstalk": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Stalk Github User",
+        "description": "Endpoint untuk Github Stalk",
         "parameters": [
           {
-            "name": "url",
+            "name": "username",
             "in": "query",
+            "description": "Nama pengguna GitHub yang ingin dicari",
             "required": true,
-            "description": "URL video TikTok yang akan diunduh.",
             "schema": {
               "type": "string"
             }
@@ -53,53 +75,22 @@
         ],
         "responses": {
           "200": {
-            "description": "Berhasil mengunduh video TikTok",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 200,
-                  "author": "Nama Anda",
-                  "result": "Video TikTok berhasil diunduh."
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Permintaan tidak valid",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 400,
-                  "message": "Masukkan URL TikTok!"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Kesalahan server",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 500,
-                  "message": "Terjadi kesalahan dalam mengunduh video TikTok."
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/api/igstalk": {
       "get": {
-        "tags": ["Instagram"],
+        "tags": ["Search"],
         "summary": "Informasi Pengguna Instagram",
-        "description": "Endpoint untuk mendapatkan informasi pengguna Instagram berdasarkan username yang diberikan.",
+        "description": "Endpoint untuk mendapatkan informasi pengguna Instagram",
         "parameters": [
           {
             "name": "username",
             "in": "query",
+            "description": "Nama pengguna Instagram yang ingin dicari",
             "required": true,
-            "description": "Nama pengguna Instagram.",
             "schema": {
               "type": "string"
             }
@@ -107,97 +98,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Berhasil mendapatkan informasi pengguna Instagram",
-            "content": {
-              "application/json": {
-                "example": {
-                  "username": "ivaannkan",
-                  "fullName": "Nama Lengkap Pengguna",
-                  "profilePicHD": "URL Foto Profil HD",
-                  "bio": "Bio Pengguna",
-                  "followers": "Jumlah Pengikut",
-                  "followersM": "Jumlah Pengikut (dalam format ribuan)",
-                  "following": "Jumlah Pengguna yang Diikuti",
-                  "followingM": "Jumlah Pengguna yang Diikuti (dalam format ribuan)",
-                  "postsCount": "Jumlah Kiriman",
-                  "postsCountM": "Jumlah Kiriman (dalam format ribuan)"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Permintaan tidak valid",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 400,
-                  "message": "Masukkan nama pengguna Instagram!"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Kesalahan server",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 500,
-                  "message": "Not found ;-;"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/ai": {
-      "get": {
-        "tags": ["AI"],
-        "summary": "Chat dengan AI",
-        "description": "Endpoint untuk berkomunikasi dengan AI berdasarkan prompt yang diberikan.",
-        "parameters": [
-          {
-            "name": "prompt",
-            "in": "query",
-            "required": true,
-            "description": "Prompt untuk berkomunikasi dengan AI.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Berhasil berkomunikasi dengan AI",
-            "content": {
-              "application/json": {
-                "example": {
-                  "response": "Response dari AI berdasarkan prompt yang diberikan."
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Permintaan tidak valid",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 400,
-                  "message": "Masukkan prompt!"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Kesalahan server",
-            "content": {
-              "application/json": {
-                "example": {
-                  "status": 500,
-                  "message": "Terjadi kesalahan dalam memproses permintaan."
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
