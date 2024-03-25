@@ -80,6 +80,190 @@
         }
       }
     },
+    "/api/alldownloader/mediafire": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download dari Mediafire",
+        "description": "Endpoint untuk download dari Mediafire",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL file di Mediafire"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/soundcloud": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download dari SoundCloud",
+        "description": "Endpoint untuk download dari SoundCloud",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL lagu di SoundCloud"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/tiktok": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download video dari TikTok",
+        "description": "Endpoint untuk download video dari TikTok",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL video di TikTok"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/twitter": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download video dari Twitter",
+        "description": "Endpoint untuk download video dari Twitter",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL tweet di Twitter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/facebook": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download video dari Facebook",
+        "description": "Endpoint untuk download video dari Facebook",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL video di Facebook"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/igdl": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download konten dari Instagram",
+        "description": "Endpoint untuk download konten dari Instagram",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL konten di Instagram"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/sfilemobi": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download dari Sfile.mobi",
+        "description": "Endpoint untuk download dari Sfile.mobi",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL file di Sfile.mobi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/alldownloader/ytmp3": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download audio dari YouTube",
+        "description": "Endpoint untuk download audio dari YouTube",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL video di YouTube"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/igstalk": {
       "get": {
         "tags": ["Search"],
