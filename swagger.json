@@ -80,7 +80,7 @@
         }
       }
     },
-    "/api/alldownloader/mediafire": {
+    "/mediafire": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download dari Mediafire",
@@ -103,7 +103,7 @@
         }
       }
     },
-    "/api/alldownloader/soundcloud": {
+    "/soundcloud": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download dari SoundCloud",
@@ -126,7 +126,7 @@
         }
       }
     },
-    "/api/alldownloader/tiktok": {
+    "/tiktok": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download video dari TikTok",
@@ -149,7 +149,7 @@
         }
       }
     },
-    "/api/alldownloader/twitter": {
+    "/twitter": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download video dari Twitter",
@@ -172,7 +172,7 @@
         }
       }
     },
-    "/api/alldownloader/facebook": {
+    "/facebook": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download video dari Facebook",
@@ -195,7 +195,7 @@
         }
       }
     },
-    "/api/alldownloader/igdl": {
+    "/igdl": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download konten dari Instagram",
@@ -218,7 +218,7 @@
         }
       }
     },
-    "/api/alldownloader/sfilemobi": {
+    "/sfilemobi": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download dari Sfile.mobi",
@@ -241,7 +241,7 @@
         }
       }
     },
-    "/api/alldownloader/ytmp3": {
+    "/ytmp3": {
       "get": {
         "tags": ["Downloader"],
         "summary": "Download audio dari YouTube",
