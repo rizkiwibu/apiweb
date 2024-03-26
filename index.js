@@ -9,7 +9,6 @@ const igdlRoute = require("./routes/igdl");
 const ghStalk = require("./routes/ghStalk");
 const allDownloader = require("./routes/allDownloader");
 
-
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
 module.exports = require('./index.js');
 
@@ -41,6 +40,7 @@ app.use("/", aiRoute);
 app.use("/", igdlRoute);
 app.use ("/", ghStalk);
 app.use ("/", allDownloader);
+
 
 // Route untuk halaman utama
 app.get("/", (req, res) => {

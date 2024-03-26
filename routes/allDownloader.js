@@ -745,7 +745,7 @@ router.get('/playvideo', async (req, res) => {
     }
 });
 
-router.get('/search', async (req, res) => {
+router.get('/ytsearch', async (req, res) => {
     const query = req.query.query;
     if (!query) {
         return res.status(400).json({

@@ -80,6 +80,29 @@
         }
       }
     },
+        "/ytsearch": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Pencarian",
+        "description": "Endpoint untuk Pencarian",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Yang Ingin di cari"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/mediafire": {
       "get": {
         "tags": ["Downloader"],
@@ -255,6 +278,122 @@
               "type": "string"
             },
             "description": "URL video di YouTube"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+        "/ytmp4": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Vidio dari YouTube",
+        "description": "Endpoint untuk download vidio dari YouTube",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL video di YouTube"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+        "/playvideo": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "playvideo",
+        "description": "Endpoint untuk playvideo",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Apa yang ingin Di play"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+        "/terabox": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Terabox",
+        "description": "Endpoint untuk Download Terabox",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URL Terabox"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+                "/playaudio": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Play Audio",
+        "description": "Endpoint untuk Play Audio",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Judul nya"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    
+            "/play": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Play Music/Vidio",
+        "description": "Endpoint untuk Play Music",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Judul nya"
           }
         ],
         "responses": {
