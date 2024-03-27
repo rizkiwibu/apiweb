@@ -26,6 +26,17 @@
         "tags": ["Ai"],
         "summary": "Interaksi dengan AI",
         "description": "Endpoint untuk interaksi dengan AI",
+               "parameters": [
+          {
+            "name": "prompt",
+            "in": "query",
+            "description": "Turbo 3.5",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -38,6 +49,17 @@
         "tags": ["Downloader"],
         "summary": "Unduh Video TikTok",
         "description": "Endpoint untuk mengunduh video TikTok",
+               "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "Url Tiktok Downloader",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -50,6 +72,17 @@
         "tags": ["Downloader"],
         "summary": "Unduh Konten Instagram",
         "description": "Endpoint untuk mengunduh konten Instagram",
+               "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "Url Ig",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
