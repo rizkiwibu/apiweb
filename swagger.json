@@ -113,7 +113,82 @@
         }
       }
     },
-        "/ytsearch": {
+        "/ffstalk": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Stalk Freefire User",
+        "description": "Endpoint untuk Freefire Stalk",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "query",
+            "description": "Nama pengguna Freefire yang ingin dicari",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },"/cuaca": {
+  "post": {
+    "tags": ["Post"],
+    "summary": "Mendapatkan informasi cuaca",
+    "description": "Endpoint untuk mendapatkan informasi cuaca berdasarkan nama kota.",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Nama kota untuk mendapatkan informasi cuaca.",
+                "example": "Jakarta"
+              }
+            },
+            "required": ["text"]
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "location": { "type": "string" },
+                "country": { "type": "string" },
+                "description": { "type": "string" },
+                "temperature": { "type": "number" },
+                "temp_max": { "type": "number" },
+                "temp_min": { "type": "number" },
+                "humidity": { "type": "number" },
+                "wind_speed": { "type": "number" }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request"
+      },
+      "500": {
+        "description": "Internal Server Error"
+      }
+    }
+  }
+},
+"/ytsearch": {
       "get": {
         "tags": ["Search"],
         "summary": "Pencarian",

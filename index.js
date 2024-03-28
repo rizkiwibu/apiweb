@@ -7,6 +7,8 @@ const igstalkRoute = require("./routes/igStalk");
 const aiRoute = require("./routes/aiRoute");
 const igdlRoute = require("./routes/igdl");
 const ghStalk = require("./routes/ghStalk");
+const ffstalk = require("./routes/ffstalk");
+const cuaca = require("./routes/cuaca");
 const allDownloader = require("./routes/allDownloader");
 
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
@@ -40,6 +42,8 @@ app.use("/", aiRoute);
 app.use("/", igdlRoute);
 app.use ("/", ghStalk);
 app.use ("/", allDownloader);
+app.use ("/", ffstalk);
+app.use ("/", cuaca);
 
 
 // Route untuk halaman utama
