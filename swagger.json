@@ -326,29 +326,6 @@
         }
       }
     },
-    "/igdl": {
-      "get": {
-        "tags": ["Downloader"],
-        "summary": "Download konten dari Instagram",
-        "description": "Endpoint untuk download konten dari Instagram",
-        "parameters": [
-          {
-            "name": "url",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "URL konten di Instagram"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/sfilemobi": {
       "get": {
         "tags": ["Downloader"],
