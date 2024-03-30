@@ -10,6 +10,7 @@ const ghStalk = require("./routes/ghStalk");
 const ffstalk = require("./routes/ffstalk");
 const cuaca = require("./routes/cuaca");
 const allDownloader = require("./routes/allDownloader");
+const ronaldo = require("./routes/ronaldo");
 
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
 module.exports = require('./index.js');
@@ -44,6 +45,7 @@ app.use ("/", ghStalk);
 app.use ("/", allDownloader);
 app.use ("/", ffstalk);
 app.use ("/", cuaca);
+app.use ("/", ronaldo)
 
 
 // Route untuk halaman utama
