@@ -44,7 +44,414 @@
         }
       }
     },
-  "/ronaldo": {
+    "/pinterest": {
+  "get": {
+    "summary": "Get images from Pinterest",
+    "tags": ["Pinterest"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "query",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "Query string to search for images"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the image"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/wallpaper": {
+  "get": {
+    "summary": "Get wallpapers",
+    "tags": ["Wallpaper"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "title",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "Title of the wallpaper to search for"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Title of the wallpaper"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Type of the wallpaper"
+                  },
+                  "source": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Source URL of the wallpaper"
+                  },
+                  "image": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL of the image"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/wikimedia": {
+  "get": {
+    "summary": "Search images on Wikimedia Commons",
+    "tags": ["Wikimedia"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "title",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "Title of the image to search for on Wikimedia Commons"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Title of the image"
+                  },
+                  "source": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Source URL of the image"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the image"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/quotesanime": {
+  "get": {
+    "summary": "Get quotes from anime",
+    "tags": ["Quotes Anime"],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "link": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the quote source"
+                  },
+                  "gambar": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the image related to the quote"
+                  },
+                  "karakter": {
+                    "type": "string",
+                    "description": "Character from the anime"
+                  },
+                  "anime": {
+                    "type": "string",
+                    "description": "Name of the anime"
+                  },
+                  "episode": {
+                    "type": "string",
+                    "description": "Episode information"
+                  },
+                  "up_at": {
+                    "type": "string",
+                    "description": "Up at information"
+                  },
+                  "quotes": {
+                    "type": "string",
+                    "description": "The quote"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/aiovideodl": {
+  "post": {
+    "summary": "Download video or audio using AIO Video Downloader",
+    "tags": ["AIO Video Downloader"],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL of the video or audio to download"
+              }
+            },
+            "required": ["link"]
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title of the video or audio"
+                },
+                "download_url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Download URL of the video or audio"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/umma": {
+  "get": {
+    "summary": "Get media content from a URL using Umma",
+    "tags": ["Umma"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "url",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "URL of the media content"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title of the media content"
+                },
+                "author": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Name of the author"
+                    },
+                    "profilePic": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL of the author's profile picture"
+                    }
+                  }
+                },
+                "caption": {
+                  "type": "string",
+                  "description": "Caption of the media content"
+                },
+                "media": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the media content"
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Type of the media content (image or video)"
+                },
+                "like": {
+                  "type": "string",
+                  "description": "Number of likes on the media content"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/ringtone": {
+  "get": {
+    "summary": "Get ringtones",
+    "tags": ["Ringtone"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "title",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "Title of the ringtone to search for"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Title of the ringtone"
+                  },
+                  "source": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Source URL of the ringtone"
+                  },
+                  "audio": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the ringtone audio"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"/styletext": {
+  "get": {
+    "summary": "Style text",
+    "tags": ["Style Text"],
+    "parameters": [
+      {
+        "in": "query",
+        "name": "text",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "description": "Text to be styled"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the text style"
+                  },
+                  "result": {
+                    "type": "string",
+                    "description": "Styled text"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+    
+    ,
+    
+    
+    
+    
+ "/ronaldo": {
     "get": {
       "tags": ["Random"],
       "summary": "Get a random Ronaldo image",
